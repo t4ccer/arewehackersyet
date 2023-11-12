@@ -19,10 +19,7 @@
                     Packages in <span class="text-success">green</span> are available in the arewehackersyet tree
                 </li>
                 <li>
-                    Packages in <span class="text-danger">red</span> have been looked for and appear to be unpackaged
-                </li>
-                <li>
-                    Packages in <span class="text-secondary">gray</span> haven't been checked yet
+                    Packages in <span class="text-danger">red</span> have appear to be unpackaged
                 </li>
             </ul>
 
@@ -46,9 +43,8 @@
 
                             <div class="col">
                                 <div class="progress">
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: <%= 100 * packages.count { |_, val| val != "todo" && val != "cantfind" } / packages.count.to_f %>%"><%= packages.count { |_, val| val != "todo" && val != "cantfind" } %></div>
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: <%= 100 * packages.count { |_, val| val != "cantfind" } / packages.count.to_f %>%"><%= packages.count { |_, val| val != "cantfind" } %></div>
                                     <div class="progress-bar bg-danger" role="progressbar" style="width: <%= 100 * packages.count { |_, val|val == "cantfind" } / packages.count.to_f %>%"><%= packages.count { |_, val| val == "cantfind" } %></div>
-                                    <div class="progress-bar bg-secondary" role="progressbar" style="width: <%= 100 * packages.count { |_, val|val == "todo" } / packages.count.to_f %>%"><%= packages.count { |_, val| val == "todo" } %></div>
                                 </div>
                             </div>
                         </div>
@@ -64,9 +60,7 @@
                                     </thead>
                                     <tbody>
                                         <% packages.each do | package_name, package_val | %>
-                                            <% if package_val == "todo" %>
-                                                <tr class="alert-secondary">
-                                            <% elsif package_val == "cantfind" %>
+                                            <% if package_val == "cantfind" %>
                                                 <tr class="alert-danger">
                                             <% else %>
                                                 <tr class="alert-success">

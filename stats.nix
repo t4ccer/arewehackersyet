@@ -1,15 +1,12 @@
-args@{ ... }:
+pkgs:
 with builtins;
 let
-  kali = import ./default.nix args;
-  pkgs = (import (import ./nix/sources.nix).nixpkgs) { };
+  kaliGroups = import ./kali.nix pkgs;
 in
 with builtins;
 let
   statsExpr =
-    mapAttrs
-      (_: mapAttrs (_: pkg: if isString pkg then pkg else pkg.meta.name))
-      kali.kaliGroups;
+    mapAttrs (_: mapAttrs (_: pkg: pkg)) kaliGroups;
   json = toJSON statsExpr;
   rubyScript = pkgs.writeScript "are-we-hackers-yet-stats-builder" ''
     #!${pkgs.ruby}/bin/ruby

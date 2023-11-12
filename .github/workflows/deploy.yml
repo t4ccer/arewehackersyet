@@ -6,13 +6,17 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: cachix/install-nix-action@v8
-    - name: build
-      run: nix-build ./stats.nix
-    - run: mkdir ./pages
-    - run: cp result ./pages/index.html
-    - name: deploy
+    - uses: actions/checkout@v3
+
+    - name: Install Nix
+      uses: DeterminateSystems/nix-installer-action@main
+
+    - name: Build
+      run: nix build .#stats
+
+    - run: mkdir ./pages && cp result ./pages/index.html
+
+    - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
