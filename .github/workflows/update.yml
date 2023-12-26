@@ -1,0 +1,28 @@
+name: "update"
+
+on:
+  schedule:
+    - cron: "0 9 * * 3"
+
+jobs:
+  deploy:
+    name: Build
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install Nix
+      uses: DeterminateSystems/nix-installer-action@main
+
+    - name: Update
+      run: nix run .#update
+
+    - name: Open Pull Request
+      uses: peter-evans/create-pull-request@v5
+      with:
+        branch: gh/update
+        reviewers: t4ccer
+        labels: update
+        title: Auto Update
+        body: |
+          Auto generated update by running `nix run .#update`

@@ -53,8 +53,8 @@
           };
 
           apps = {
-            fetchLists.program = pkgs.writeShellApplication {
-              name = "fetch-lists";
+            update.program = pkgs.writeShellApplication {
+              name = "update";
 
               runtimeInputs = [
                 pkgs.curl
@@ -74,6 +74,8 @@
                 ruby --encoding utf-8 parse-kali-descs.rb < "$packages" | jq > kali-descriptions.json
 
                 rm "$packages"
+
+                nix flake update
               '';
             };
           };
