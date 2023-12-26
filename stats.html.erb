@@ -24,7 +24,7 @@
             </ul>
 
             <p>
-                Contribute to the tracker at <a href="https://github.com/JJJollyjim/arewehackersyet">github.com/JJJollyjim/arewehackersyet</a>.
+                Contribute to the fork at <a href="https://github.com/t4ccer/arewehackersyet">github.com/t4ccer/arewehackersyet</a>, based on <a href="https://github.com/JJJollyjim/arewehackersyet">github.com/JJJollyjim/arewehackersyet</a>.
             </p>
 
             <p>
@@ -43,8 +43,8 @@
 
                             <div class="col">
                                 <div class="progress">
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: <%= 100 * packages.count { |_, val| val != "cantfind" } / packages.count.to_f %>%"><%= packages.count { |_, val| val != "cantfind" } %></div>
-                                    <div class="progress-bar bg-danger" role="progressbar" style="width: <%= 100 * packages.count { |_, val|val == "cantfind" } / packages.count.to_f %>%"><%= packages.count { |_, val| val == "cantfind" } %></div>
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: <%= 100 * packages.count { |_, val| val['drv'] != "cantfind" } / packages.count.to_f %>%"><%= packages.count { |_, val| val["drv"] != "cantfind" } %></div>
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width: <%= 100 * packages.count { |_, val| val['drv'] == "cantfind" } / packages.count.to_f %>%"><%= packages.count { |_, val| val['drv'] == "cantfind" } %></div>
                                 </div>
                             </div>
                         </div>
@@ -60,15 +60,23 @@
                                     </thead>
                                     <tbody>
                                         <% packages.each do | package_name, package_val | %>
-                                            <% if package_val == "cantfind" %>
+                                            <% if package_val['drv'] == "cantfind" %>
                                                 <tr class="alert-danger">
+                                                  <th scope="row"><%= package_name %></th>
+                                                  <td><%= descs[package_name] %></td>
+                                                  <td>Not found</td>
+                                                </tr>
                                             <% else %>
                                                 <tr class="alert-success">
+                                                  <th scope="row"><%= package_name %></th>
+                                                  <td><%= descs[package_name] %></td>
+                                                  <td>
+                                                    <a href="<%= package_val['link'] %>">
+                                                      <%= package_val['drv'] %>
+                                                    </a>
+                                                  </td>
+                                                </tr>
                                             <% end %>
-                                                <th scope="row"><%= package_name %></th>
-                                                <td><%= descs[package_name] %></td>
-                                                <td><%= package_val %></td>
-                                            </tr>
                                         <% end %>
                                     </tbody>
                                 </table>

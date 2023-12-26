@@ -1,7 +1,7 @@
-pkgs:
+{rev, pkgs}:
 with builtins;
 let
-  kaliGroups = import ./kali.nix pkgs;
+  kaliGroups = import ./kali.nix {inherit rev pkgs;};
 in
 with builtins;
 let

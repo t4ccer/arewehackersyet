@@ -24,8 +24,6 @@
 
       systems = inputs.nixpkgs.lib.systems.flakeExposed;
 
-      debug = true;
-
       perSystem =
         { config
         , self'
@@ -47,7 +45,11 @@
           };
 
           packages = {
-            stats = import ./stats.nix pkgs;
+            stats = import ./stats.nix {
+              inherit pkgs;
+              rev = inputs.nixpkgs.rev;
+            };
+            default = self'.packages.stats;
           };
 
           apps = {
