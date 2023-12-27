@@ -335,7 +335,7 @@ let
     "seclists" = { };
     "secure-socket-funneling-windows-binaries" = { };
     "sentrypeer" = { };
-    "set" = { };
+    "set" = { pkg = pkgs.social-engineer-toolkit; };
     "sfuzz" = { };
     "shellnoob" = { };
     "shellter" = { };
