@@ -16,6 +16,7 @@ let
 
     descs = JSON.parse(File.read("${./kali-descriptions.json}"))
     groups = JSON.parse(File.read("${pkgs.writeText "are-we-hackers-yet-stats-json" json}"))
+    nixpkgs_rev = "${rev}"
 
     template = ERB.new(File.read("${./stats.html.erb}"))
 
