@@ -21,6 +21,7 @@
     "wifite"
   ],
   "bluetooth": [
+    "blue-hydra",
     "bluelog",
     "blueranger",
     "bluesnarfer",
@@ -118,12 +119,12 @@
     "nasm",
     "nasty",
     "ollydbg",
-    "p7zip-full",
+    "7zip",
     "parted",
     "pasco",
     "pdfid",
     "pdf-parser",
-    "pev",
+    "readpe",
     "plaso",
     "polenum",
     "pst-utils",
@@ -409,6 +410,7 @@
     "uhd-images"
   ],
   "sniffing-spoofing": [
+    "above",
     "bettercap",
     "darkstat",
     "dnschef",
