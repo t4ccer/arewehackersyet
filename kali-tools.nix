@@ -314,7 +314,7 @@ let
     "rfkill" = { };
     "rifiuti" = { };
     "rifiuti2" = { };
-    "rizin-cutter" = { };
+    "rizin-cutter" = { pkg = pkgs.cutter };
     "rkhunter" = { };
     "rsakeyfind" = { };
     "rsmangler" = { };
