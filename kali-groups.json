@@ -257,7 +257,8 @@
     "twofi",
     "unicornscan",
     "urlcrazy",
-    "wafw00f"
+    "wafw00f",
+    "zenmap"
   ],
   "passwords": [
     "cewl",
@@ -275,7 +276,6 @@
     "hashcat-utils",
     "hashid",
     "hydra",
-    "hydra-gtk",
     "john",
     "johnny",
     "maskprocessor",
@@ -310,7 +310,6 @@
     "wordlists"
   ],
   "post-exploitation": [
-    "backdoor-factory",
     "cymothoa",
     "dbd",
     "dns2tcp",
@@ -405,7 +404,6 @@
     "inspectrum",
     "kalibrate-rtl",
     "multimon-ng",
-    "rtlsdr-scanner",
     "uhd-host",
     "uhd-images"
   ],
@@ -437,7 +435,6 @@
     "yersinia"
   ],
   "social-engineering": [
-    "backdoor-factory",
     "beef-xss",
     "maltego",
     "msfpc",
@@ -447,7 +444,7 @@
   "top10": [
     "aircrack-ng",
     "burpsuite",
-    "crackmapexec",
+    "netexec",
     "hydra",
     "john",
     "metasploit-framework",
@@ -537,7 +534,6 @@
     "httprint",
     "httrack",
     "hydra",
-    "hydra-gtk",
     "jboss-autopwn",
     "joomscan",
     "jsql-injection",
