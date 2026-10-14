@@ -26,7 +26,6 @@
     "blueranger",
     "bluesnarfer",
     "bluez",
-    "bluez-hcidump",
     "btscanner",
     "crackle",
     "redfang",
@@ -37,8 +36,8 @@
     "aesfix",
     "aeskeyfind",
     "ccrypt",
-    "outguess",
     "steghide",
+    "stegosuite",
     "stegsnow"
   ],
   "database": [
@@ -69,10 +68,12 @@
     "termineter"
   ],
   "forensics": [
+    "7zip",
     "afflib-tools",
     "apktool",
     "autopsy",
     "binwalk",
+    "binwalk3",
     "bulk-extractor",
     "bytecode-viewer",
     "cabextract",
@@ -119,12 +120,10 @@
     "nasm",
     "nasty",
     "ollydbg",
-    "7zip",
     "parted",
     "pasco",
-    "pdfid",
     "pdf-parser",
-    "readpe",
+    "pdfid",
     "plaso",
     "polenum",
     "pst-utils",
@@ -134,6 +133,7 @@
     "python3-dfwinreg",
     "python3-distorm3",
     "radare2",
+    "readpe",
     "recoverdm",
     "recoverjpeg",
     "reglookup",
@@ -181,6 +181,7 @@
   ],
   "hardware": [
     "binwalk",
+    "binwalk3",
     "cutecom",
     "flashrom",
     "minicom",
@@ -257,7 +258,8 @@
     "twofi",
     "unicornscan",
     "urlcrazy",
-    "wafw00f"
+    "wafw00f",
+    "zenmap"
   ],
   "passwords": [
     "cewl",
@@ -268,7 +270,7 @@
     "creddump7",
     "crunch",
     "fcrackzip",
-    "freerdp2-x11",
+    "freerdp3-x11",
     "gpp-decrypt",
     "hash-identifier",
     "hashcat",
@@ -310,7 +312,6 @@
     "wordlists"
   ],
   "post-exploitation": [
-    "backdoor-factory",
     "cymothoa",
     "dbd",
     "dns2tcp",
@@ -381,16 +382,12 @@
     "metasploit-framework",
     "ollydbg",
     "radare2",
+    "rizin",
     "rizin-cutter",
     "rz-ghidra"
   ],
   "rfid": [
     "gnuradio",
-    "libfreefare-bin",
-    "libnfc-bin",
-    "mfcuk",
-    "mfoc",
-    "mfterm",
     "proxmark3",
     "rfdump"
   ],
@@ -405,7 +402,6 @@
     "inspectrum",
     "kalibrate-rtl",
     "multimon-ng",
-    "rtlsdr-scanner",
     "uhd-host",
     "uhd-images"
   ],
@@ -433,11 +429,9 @@
     "tcpflow",
     "tcpreplay",
     "wifi-honey",
-    "wireshark",
-    "yersinia"
+    "wireshark"
   ],
   "social-engineering": [
-    "backdoor-factory",
     "beef-xss",
     "maltego",
     "msfpc",
@@ -447,10 +441,10 @@
   "top10": [
     "aircrack-ng",
     "burpsuite",
-    "crackmapexec",
     "hydra",
     "john",
     "metasploit-framework",
+    "netexec",
     "nmap",
     "responder",
     "sqlmap",
@@ -617,7 +611,6 @@
     "rfcat",
     "rfkill",
     "sakis3g",
-    "spectools",
     "wireshark"
   ]
 }
